@@ -1,8 +1,5 @@
 import React, { Component } from "react";
 import { DropzoneArea } from "material-ui-dropzone";
-import Resizer from "react-image-file-resizer";
-
-import { Row, Col } from "react-bootstrap";
 
 class Camera extends Component {
   // constructor(props) {
@@ -38,7 +35,7 @@ class Camera extends Component {
       <div style={{ width: "50%", marginLeft: "25%", marginRight: "25%" }}>
         {" "}
         <DropzoneArea
-          onChange={photo => this.handlePhotoChangeandResize(photo)}
+          onChange={(photo) => this.handlePhotoChangeandResize(photo)}
           dropzoneText="İlacınızın Fotoğrafını Sürükleyip Bırakın"
         />
       </div>

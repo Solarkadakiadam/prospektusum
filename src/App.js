@@ -15,7 +15,6 @@ import Tylolhot from "./Tylolhot";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 import Sky from "react-sky";
-import myImage from "./images/vermidon+.png";
 import Fail from "./fail";
 
 function App() {
