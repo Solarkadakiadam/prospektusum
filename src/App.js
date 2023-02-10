@@ -16,6 +16,11 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 import Sky from "react-sky";
 import Fail from "./fail";
+import Icon1 from "./icons/icon1.png"
+import Icon2 from "./icons/icon2.png"
+import Icon3 from "./icons/icon3.png"
+import Icon4 from "./icons/icon4.png"
+
 
 function App() {
   const worker = createWorker({
@@ -39,16 +44,15 @@ function App() {
   const [photo, setPhoto] = useState();
 
   const photoHandler = (photo) => {
-    let photoUrl = URL.createObjectURL(photo[0]) || null;
+    if(photo && photo.length >0 ){
 
-    setPhoto(photoUrl);
-    console.log(photo);
+      let photoUrl = URL.createObjectURL(photo[0]) || null;
+      setPhoto(photoUrl);
+    }
   };
 
-  console.log(ocr, "ocr bu");
 
   const renderProspektus = () => {
-    console.log("gelen ocr");
 
     if (ocr === "") {
       return null;
@@ -84,15 +88,16 @@ function App() {
       <Sky
         images={{
           /* FORMAT AS FOLLOWS */
-          0: "https://image.flaticon.com/icons/png/512/991/991884.png" /* You can pass as many images as you want */,
-          1: "https://cdn4.iconfinder.com/data/icons/health-and-fitness/100/medicine-08-512.png",
-          2: "https://image.flaticon.com/icons/png/512/773/premium/773795.png",
+          0: Icon1 /* You can pass as many images as you want */,
+          1: Icon2,
+          2: Icon3,
+          3: Icon4,
         }}
         how={
-          130
+          80
         } /* Pass the number of images Sky will render chosing randomly */
         time={40} /* time of animation */
-        size={"100px"} /* size of the rendered images */
+        size={"80px"} /* size of the rendered images */
         background={"palettedvioletred"} /* color of background */
       />
 
@@ -106,12 +111,12 @@ function App() {
               fontSize: "180%",
             }}
           >
-            Prospektusum.com
+            Prospektusum.com DEMO
           </p>
           <image />
         </div>
 
-        <Camera handlePhotoChange={photoHandler} />
+        <Camera handlePhotoChange={photoHandler}  />
         <div style={{ marginLeft: "45%", marginTop: "2%" }}>
           {photo && ocr === "" ? (
             <div>
